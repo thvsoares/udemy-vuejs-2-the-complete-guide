@@ -2,7 +2,8 @@ new Vue({
     el: '#exercise',
     data: {
         name: 'Thiago',
-        age: 32
+        age: 32,
+        randomImage: 'https://picsum.photos/100/100'
     },
     methods: {
         getRandom: function () {
