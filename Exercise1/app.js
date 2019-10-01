@@ -5,5 +5,8 @@ new Vue({
         age: 32
     },
     methods: {
+        getRandom: function () {
+            return Math.random();
+        }
     }
 });
