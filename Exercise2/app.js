@@ -6,6 +6,9 @@ new Vue({
     methods: {
         alertClick() {
             alert("Alert method")
+        },
+        onKeyDown(event) {
+            this.value = event.target.value
         }
     }
 });
