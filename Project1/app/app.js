@@ -3,7 +3,7 @@ new Vue({
     data: {
         playerLife: 100,
         monsterLife: 100,
-        plaing: false,
+        playing: false,
         combatLog: []
     }
 });
