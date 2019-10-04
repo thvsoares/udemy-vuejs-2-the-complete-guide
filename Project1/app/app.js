@@ -28,7 +28,15 @@ new Vue({
             this.playerLife -= damage;
             this.combatLog.push({ player: false, message: `The monster did ${damage} damage with the revenge attack` });
         },
-        heal() {},
+        heal() {
+            let heal = this.roll(20);
+            this.playerLife += heal;
+            this.combatLog.push({ player: true, message: `The player heal ${heal}` });
+
+            let damage = this.roll(10);
+            this.playerLife -= damage;
+            this.combatLog.push({ player: false, message: `The monster did ${damage} damage` });
+        },
         giveUp() {}
     }
 });
