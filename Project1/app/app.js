@@ -30,6 +30,9 @@ new Vue({
         },
         heal() {
             let heal = this.roll(20);
+            if (heal + this.playerLife > 100) {
+                heal = 100 - this.playerLife;
+            }
             this.playerLife += heal;
             this.combatLog.push({ player: true, message: `The player heal ${heal}` });
 
