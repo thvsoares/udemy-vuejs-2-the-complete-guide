@@ -7,7 +7,18 @@ new Vue({
         combatLog: []
     },
     methods: {
-        attack() {},
+        roll(max) {
+            return Math.floor(Math.random() * 100) % max;
+        },
+        attack() {
+            let damage = this.roll(10);
+            this.monsterLife -= damage;
+            this.combatLog.push({ player: true, message: `The player did ${damage} damage` });
+
+            damage = this.roll(10);
+            this.playerLife -= damage;
+            this.combatLog.push({ player: false, message: `The monster did ${damage} damage` });
+        },
         specialAttack() {},
         heal() {},
         giveUp() {}
