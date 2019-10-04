@@ -4,7 +4,28 @@ new Vue({
         playerLife: 100,
         monsterLife: 100,
         playing: false,
+        commandsDisabled: false,
         combatLog: []
+    },
+    watch: {
+        monsterLife() {
+            if (this.monsterLife > 0) {
+                return;
+            }
+            this.commandsDisabled = true;
+            if (confirm('You won! Play another game?')) {
+                this.startNewGame();
+            }
+        },
+        playerLife() {
+            if (this.playerLife > 0) {
+                return;
+            }
+            this.commandsDisabled = true;
+            if (confirm('Not your time yet! Ready for revange?')) {
+                this.startNewGame();
+            }
+        },
     },
     methods: {
         roll(max) {
@@ -43,6 +64,7 @@ new Vue({
         startNewGame() {
             this.playerLife = this.monsterLife = 100;
             this.playing = !this.playing;
+            this.commandsDisabled = false;
             this.combatLog = [];
         }
     }
