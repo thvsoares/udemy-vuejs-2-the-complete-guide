@@ -5,5 +5,11 @@ new Vue({
         monsterLife: 100,
         playing: false,
         combatLog: []
+    },
+    methods: {
+        attack() {},
+        specialAttack() {},
+        heal() {},
+        giveUp() {}
     }
 });
