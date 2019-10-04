@@ -19,7 +19,15 @@ new Vue({
             this.playerLife -= damage;
             this.combatLog.push({ player: false, message: `The monster did ${damage} damage` });
         },
-        specialAttack() {},
+        specialAttack() {
+            let damage = this.roll(30);
+            this.monsterLife -= damage;
+            this.combatLog.push({ player: true, message: `The player did ${damage} damage with the special attack` });
+
+            damage = this.roll(30);
+            this.playerLife -= damage;
+            this.combatLog.push({ player: false, message: `The monster did ${damage} damage with the revenge attack` });
+        },
         heal() {},
         giveUp() {}
     }
