@@ -40,9 +40,9 @@ new Vue({
             this.playerLife -= damage;
             this.combatLog.push({ player: false, message: `The monster did ${damage} damage` });
         },
-        giveUp() {
+        startNewGame() {
             this.playerLife = this.monsterLife = 100;
-            this.playing = false;
+            this.playing = !this.playing;
             this.combatLog = [];
         }
     }
