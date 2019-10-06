@@ -1,0 +1,12 @@
+version: '2'
+
+services: 
+  vue:
+    image: 'vue'
+    ports: 
+      - 80:80
+    volumes: 
+      - .:/home/node
+    build: 
+      context: .
+      dockerfile: dockerfile
