@@ -1,0 +1,4 @@
+FROM node:12.11.0-stretch
+
+RUN npm install -g vue-cli
+EXPOSE 80
